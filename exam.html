@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Structure Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .explanation {
+            font-size: 14px;
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Python Control Structure Quiz</h2>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Which keyword is used for decision making in Python?</p>
+                <input type="radio" name="q1" value="if"> if<br>
+                <input type="radio" name="q1" value="for"> for<br>
+                <input type="radio" name="q1" value="while"> while<br>
+                <p class="explanation" id="explain_q1"></p>
+            </div>
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. What is the output of: print(5 > 3)?</p>
+                <input type="radio" name="q2" value="True"> True<br>
+                <input type="radio" name="q2" value="False"> False<br>
+                <input type="radio" name="q2" value="Error"> Error<br>
+                <p class="explanation" id="explain_q2"></p>
+            </div>
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Which loop is used when the number of iterations is not known beforehand?</p>
+                <input type="radio" name="q3" value="for"> for<br>
+                <input type="radio" name="q3" value="while"> while<br>
+                <input type="radio" name="q3" value="do-while"> do-while<br>
+                <p class="explanation" id="explain_q3"></p>
+            </div>
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. What will be the output of: if 0: print("Yes") else: print("No")?</p>
+                <input type="radio" name="q4" value="Yes"> Yes<br>
+                <input type="radio" name="q4" value="No"> No<br>
+                <input type="radio" name="q4" value="Error"> Error<br>
+                <p class="explanation" id="explain_q4"></p>
+            </div>
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. What is the purpose of the "continue" statement?</p>
+                <input type="radio" name="q5" value="Skips current iteration"> Skips current iteration<br>
+                <input type="radio" name="q5" value="Exits loop"> Exits loop<br>
+                <input type="radio" name="q5" value="Repeats loop"> Repeats loop<br>
+                <p class="explanation" id="explain_q5"></p>
+            </div>
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Which loop is best used when the number of iterations is known?</p>
+                <input type="radio" name="q6" value="for"> for<br>
+                <input type="radio" name="q6" value="while"> while<br>
+                <input type="radio" name="q6" value="do-while"> do-while<br>
+                <p class="explanation" id="explain_q6"></p>
+            </div>
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. What does the "break" statement do in a loop?</p>
+                <input type="radio" name="q7" value="Exits the loop"> Exits the loop<br>
+                <input type="radio" name="q7" value="Skips current iteration"> Skips current iteration<br>
+                <input type="radio" name="q7" value="Repeats the loop"> Repeats the loop<br>
+                <p class="explanation" id="explain_q7"></p>
+            </div>
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. What will be the output of: for i in range(3): print(i)</p>
+                <input type="radio" name="q8" value="0 1 2"> 0 1 2<br>
+                <input type="radio" name="q8" value="1 2 3"> 1 2 3<br>
+                <input type="radio" name="q8" value="0 1 2 3"> 0 1 2 3<br>
+                <p class="explanation" id="explain_q8"></p>
+            </div>
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. What does the "else" block in a loop do in Python?</p>
+                <input type="radio" name="q9" value="Executes if the loop is not terminated by a break"> Executes if the loop is not terminated by a break<br>
+                <input type="radio" name="q9" value="Executes every time after the loop"> Executes every time after the loop<br>
+                <input type="radio" name="q9" value="Never executes"> Never executes<br>
+                <p class="explanation" id="explain_q9"></p>
+            </div>
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Which of the following is not a control structure in Python?</p>
+                <input type="radio" name="q10" value="if"> if<br>
+                <input type="radio" name="q10" value="for"> for<br>
+                <input type="radio" name="q10" value="function"> function<br>
+                <p class="explanation" id="explain_q10"></p>
+            </div>
+            <button type="button" onclick="calculateScore()">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            let answers = { 
+                q1: "if", 
+                q2: "True",
+                q3: "while",
+                q4: "No",
+                q5: "Skips current iteration",
+                q6: "for",
+                q7: "Exits the loop",
+                q8: "0 1 2",
+                q9: "Executes if the loop is not terminated by a break",
+                q10: "function"
+            };
+            let explanations = {
+                q1: "The 'if' keyword is used for decision making in Python.",
+                q2: "The expression 5 > 3 evaluates to True because 5 is greater than 3.",
+                q3: "A 'while' loop is used when the number of iterations is not known beforehand.",
+                q4: "The condition 0 evaluates to False, so the 'else' block executes, printing 'No'.",
+                q5: "The 'continue' statement skips the rest of the current iteration and moves to the next one.",
+                q6: "A 'for' loop is typically used when the number of iterations is known.",
+                q7: "The 'break' statement immediately exits the loop.",
+                q8: "range(3) generates numbers from 0 to 2, so the loop prints 0, 1, and 2.",
+                q9: "An 'else' block after a loop executes only if the loop completes normally (without a break).",
+                q10: "Functions are used to organize code and are not considered control structures."
+            };
+            
+            for (let key in answers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                let explanationElement = document.getElementById(`explain_${key}`);
+                if (selected) {
+                    if (selected.value === answers[key]) {
+                        score++;
+                        explanationElement.innerHTML = "";
+                    } else {
+                        explanationElement.innerHTML = `Incorrect! Correct answer: ${answers[key]}. ${explanations[key]}`;
+                    }
+                } else {
+                    explanationElement.innerHTML = "Please select an option.";
+                }
+            }
+            
+            document.getElementById("result").innerHTML = `Your score: ${score}/10`;
+        }
+    </script>
+</body>
+</html>
