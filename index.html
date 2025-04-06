@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Code Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: monospace;
+        }
+        label {
+            font-weight: bold;
+        }
+        button {
+            background: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #submit-msg {
+            font-weight: bold;
+            color: green;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Python Code Practice - Control Structures</h2>
+        <form id="codeForm">
+            <div>
+                <label>1. Write a Python program to check if a number is positive, negative or zero.</label>
+                <textarea name="q1"></textarea>
+            </div>
+            <div>
+                <label>2. Write a Python program using if-else to check if a number is even or odd.</label>
+                <textarea name="q2"></textarea>
+            </div>
+            <div>
+                <label>3. Write a Python program using a for loop to print numbers from 1 to 10.</label>
+                <textarea name="q3"></textarea>
+            </div>
+            <div>
+                <label>4. Write a Python program to find the sum of all numbers from 1 to 100 using a loop.</label>
+                <textarea name="q4"></textarea>
+            </div>
+            <div>
+                <label>5. Write a Python program to find the factorial of a number using while loop.</label>
+                <textarea name="q5"></textarea>
+            </div>
+            <div>
+                <label>6. Write a Python program to print the multiplication table of a given number using loop.</label>
+                <textarea name="q6"></textarea>
+            </div>
+            <div>
+                <label>7. Write a Python program that prints only even numbers from a list using loop and if statement.</label>
+                <textarea name="q7"></textarea>
+            </div>
+            <div>
+                <label>8. Write a Python program that prints the numbers from 1 to 20 but skips multiples of 5.</label>
+                <textarea name="q8"></textarea>
+            </div>
+            <div>
+                <label>9. Write a Python program that breaks the loop when number 7 is encountered in the list.</label>
+                <textarea name="q9"></textarea>
+            </div>
+            <div>
+                <label>10. Write a Python program that counts how many times the letter 'a' appears in a given string.</label>
+                <textarea name="q10"></textarea>
+            </div>
+            <button type="button" onclick="submitCode()">Submit</button>
+            <div id="submit-msg"></div>
+        </form>
+    </div>
+
+    <script>
+        function submitCode() {
+            document.getElementById("submit-msg").innerHTML = "Your answers have been submitted successfully! (Note: This does not store data permanently.)";
+        }
+    </script>
+</body>
+</html>
